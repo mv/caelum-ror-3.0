@@ -26,8 +26,8 @@ class CommentsController < ApplicationController
   # GET /posts/1/comments/1
   # GET /posts/1/comments/1.xml
   def show
-    # @post = Post.find(params[:post_id])
-    # @comment = @post.comments.find(params[:id])
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
 
     @comment = Comment.find(params[:id])
 
