@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
@@ -16,18 +16,8 @@
 </p>
 
 <h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-  <p>
-    <b>Commenter:</b>
-    <%= comment.commenter %>
-  </p>
-
-  <p>
-    <b>Comment:</b>
-    <%= comment.body %>
-  </p>
-<% end %>
-
+<%= render :partial => "comments/comment",
+           :collection => @post.comments %>
 
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
@@ -46,6 +36,6 @@
   </div>
 <% end %>
 
-
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
