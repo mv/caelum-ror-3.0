@@ -2,3 +2,6 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
+doc/**/*
+db/*structure.sql
+
