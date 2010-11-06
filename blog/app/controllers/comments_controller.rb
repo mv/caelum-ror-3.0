@@ -16,11 +16,18 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def destroy
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    @comment.destroy
+    redirect_to post_path(@post)
+  end
+   
   # GET /posts/1/comments/1
   # GET /posts/1/comments/1.xml
   def show
     # @post = Post.find(params[:post_id])
-    # @comment = @post.comments.find(params[:comment])
+    # @comment = @post.comments.find(params[:id])
 
     @comment = Comment.find(params[:id])
 
