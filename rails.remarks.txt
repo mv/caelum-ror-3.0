@@ -1,0 +1,59 @@
+MVC
+---
+
+Models
+    - business logic
+    - data information and rules to manipulate this data
+    - often: one model -> one table 
+      
+Views
+    - user interface: the apresentation of data
+    - html output, generated via templates
+      
+Controllers
+    - puts together Views and Models
+    - process incoming requests, interrogating the
+      Models for data and passing them to the Views.
+
+Rails
+-----
+
+Action Pack: V and C of "MVC"
+    - ActionController:
+        - incoming requests
+        - parameter processing
+        - session management
+        - template rendering
+        - redirects
+    - ActionView
+        - create HTML
+        - create XML
+        - render templates
+        - has built-in AJAX support
+    - ActionDispatch
+        - routing of requests
+
+Active Model:
+        - M of "MVC"
+        - interface between ActioPack and ActiveRecord
+
+Active Record:
+        - database framework
+        - basic CRUD functionality
+        - advanced 'find' capabilities
+
+Action Mailer:
+        - framework to handle email
+
+Active Resource:
+        - framework to map web-based resources to local
+          objects using CRUD semantics
+
+Active Support:
+        - utility classes
+
+Railties:
+        - core rails code
+
+
+
