@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: post one
+  title: Post1
+  content: first post
+
+two:
+  name: post two
+  title: Post2
+  content: second post
+
