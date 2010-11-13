@@ -10,11 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101113112954) do
+ActiveRecord::Schema.define(:version => 20101113115800) do
 
   create_table "restaurantes", :force => true do |t|
-    t.string   "name",       :limit => 80
-    t.string   "endereco",   :limit => 80
+    t.string   "name",          :limit => 80
+    t.string   "endereco",      :limit => 80
+    t.string   "especialidade", :limit => 40
     t.datetime "created_at"
     t.datetime "updated_at"
   end
