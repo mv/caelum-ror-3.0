@@ -38,5 +38,8 @@ module Votaprato
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    # db/schema.rb format: :ruby or :sql
+    config.active_record.schema_format = :sql
   end
 end
