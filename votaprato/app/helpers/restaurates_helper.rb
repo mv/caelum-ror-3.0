@@ -1,0 +1,2 @@
+module RestauratesHelper
+end

@@ -1,0 +1,2 @@
+class RestauratesController < ApplicationController
+end
