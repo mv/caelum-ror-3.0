@@ -44,3 +44,8 @@ td {
     padding: 2px;
 }
 
+li {
+    display: inline;
+    margin-right: 5px;
+}
+
