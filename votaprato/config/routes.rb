@@ -1,5 +1,7 @@
 Votaprato::Application.routes.draw do
 
+  resources :clientes
+
   # resources :restaurantes
 
   # The priority is based upon order of creation:
