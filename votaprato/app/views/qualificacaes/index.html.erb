@@ -13,8 +13,8 @@
 
 <% @qualificacaes.each do |qualificacao| %>
   <tr>
-    <td><%= qualificacao.cliente_id %></td>
-    <td><%= qualificacao.restaurante_id %></td>
+    <td><%= qualificacao.cliente.nome %></td>
+    <td><%= qualificacao.restaurante.name %></td>
     <td><%= qualificacao.nota %></td>
     <td><%= qualificacao.valor_gasto %></td>
     <td><%= link_to 'Show', qualificacao %></td>
