@@ -1,10 +1,12 @@
 
+ /* my headers { */
 h1 {color: #4169E1;}
 h2 {color: #808000;}
 h3 {color: #800080;}
 h4 {color: #8B0000;}
 h5 {color: #175999;}
 h6 {color: #176000;}
+ /* my headers } */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
