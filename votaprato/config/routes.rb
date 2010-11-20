@@ -59,5 +59,11 @@ Votaprato::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   match ':controller(/:action(/:id(.:format)))'
 
+  match 'rack', :to => 
+         proc{|env| [200, {"Content-Type" => "text/html"} \
+                        , ["App Rack numa rota Rails"]    \
+                    ] \
+         }
+
 end
 
