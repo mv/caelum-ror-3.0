@@ -1,5 +1,7 @@
 Votaprato::Application.routes.draw do
 
+  resources :qualificacaes
+
   resources :clientes
 
   # resources :restaurantes
