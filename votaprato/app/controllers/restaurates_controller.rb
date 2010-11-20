@@ -1,2 +1,0 @@
-class RestauratesController < ApplicationController
-end
