@@ -1,0 +1,44 @@
+
+Creating response:
+------------------
+	- render
+	- head
+	- redirect_to
+
+
+Parts:
+------
+Controller:
+===========
+    class BooksController < ApplicationController
+        def index
+            @books = Book.all
+        end
+    end
+
+route
+=====
+    resource :books	
+
+view
+====
+    app/views/books/index.html.erb
+
+        <h1>Listing Books</h1>
+
+
+        <table>
+        <tr> <th>Title</th> <th>Summary</th> </tr>
+
+        <% @books.each do |book| %>
+        <tr>
+            <td><%= book.title %></td>
+            <td><%= book.content %></td>
+            <td><%= link_to 'Show'   , book                                                  %></td>
+            <td><%= link_to 'Edit'   , edit_book_path(book)                                  %></td>
+            <td><%= link_to 'Remove' , book, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+        <% end %>
+
+        </table>
+					

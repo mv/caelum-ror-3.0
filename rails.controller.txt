@@ -1,0 +1,41 @@
+Controller
+----------
+
+application_controller.rb
+    - é o 'front' controller
+    - recebe as requisicoes e delega ao 
+      controller especifico.
+
+controller
+    - cada controller tem sua view
+    - controllers devem ser 'skinny'
+    - dentro de cada controller os métodos são 'actions'
+    - actions:
+        - index     - edit    - create     
+        - list      - show    - update     
+        - view      - new     - destroy    
+        
+    - convencao:
+        .rb: HelloWordController
+        url: hello_world
+        
+
+Exemplo 1
+---------
+    rails generate controller hello_world
+
+$     rails generate controller hello_world
+      create  app/controllers/hello_world_controller.rb
+      invoke  erb
+      create    app/views/hello_world
+      invoke  test_unit
+      create    test/functional/hello_world_controller_test.rb
+      invoke  helper
+      create    app/helpers/hello_world_helper.rb
+      invoke    test_unit
+      create      test/unit/helpers/hello_world_helper_test.rb
+
+Exemplo 2
+---------
+    rails generate controller restaurantes
+

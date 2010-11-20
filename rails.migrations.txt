@@ -1,0 +1,146 @@
+Ref: http://guides.rubyonrails.org/migrations.html
+
+### Migration: when creating a model
+    rails generate model Product name:string description:text
+
+### Migration: standalone
+    rails generate migration add_especialidade_to_restaurantes
+
+    rails generate migration RemovePartNumberFromProducts part_number:string
+
+rails generate migration add_especialidade_to_restaurantes
+      invoke  active_record
+      create    db/migrate/20101113115800_add_especialidade_to_restaurantes.rb
+
+
+ActiveRecord
+    # create_table
+    # drop_table
+    # change_table
+    # add_column
+    # remove_column           :string    :text                       
+    # change_column           :integer   :float    :decimal          
+    # rename_column           :timestamp :datetime :date :time    
+    # remove_column           :binary                                
+    # add_index               :boolean                               
+    # remove_index
+    # execute
+    
+    ActiveRecord::Migration
+        # up
+        # down
+
+        MyMigration < ActiveRecord::Migration
+            def self.up
+            end
+
+            def self.down
+            end
+
+Example
+-------
+MyMigration < ActiveRecord::Migration
+
+    def self.up
+        t.column :column_name , :limit => 80
+
+        t.timestamps
+
+        execute "alter table...."
+
+        # Helpers
+        validate_presence_of    :nome, :endereco
+        validate_uniqueness_off :nome
+        validate                :nome, :primeira_letra_maiuscula
+        validate_numbericality_of :valor, :odd
+                                        , :even
+                                        , :greater_than_or_equals
+                                        , :greater_than
+                                        , :less_than_or_equals
+                                        , :less_than
+                                        , :equal_to Proc.new { |a| }
+    end
+
+    def self.down
+        drop_table :table_name
+        execute <<-SQL
+            alter table....
+            drop index.....
+            drop sequence....
+        SQL
+        raise IrreversibleMigration
+    end
+
+    private
+    def :primeira_letra_maiuscula
+        if ....
+    end
+
+
+Rake
+----
+rake db:migrate VERSION=20080906120000
+rake db:rollback
+rake db:rollback STEP=3
+rake db:migrate:redo STEP=3
+
+rake db:migrate:up   VERSION=20080906120000
+rake db:migrate:down VERSION=20080906120000
+
+rake db:migrate VERBOSE=false
+
+Validation
+----------
+
+Validation via Callbacks
+------------------------
+   Ref: http://guides.rubyonrails.org/active_record_validations_callbacks.html
+
+               Object       Create Update Destroy
+    before_validation       yes     yes
+     after_validation       yes     yes
+    before_save             yes     yes
+     after_save             yes     yes
+    before_create           yes     
+    around_create           yes     
+     after_create           yes     
+    before_update                   yes
+    around_update                   yes
+     after_update                   yes
+   before_destroy                         yes
+   around_destroy                         yes
+    after_destroy                         yes
+
+    after_initialize
+    after_find
+
+Association
+-----------
+    
+    # one to one
+    :has_one
+
+    # many to one
+    :belongs_to
+    :has_many
+
+    # many to many
+    :has_one  :through
+    :has_many :through
+    :has_and_belongs_to_many
+
+    # polymorphic
+    :polymorphic
+    :as
+
+
+Config
+------
+config.time_zone                           = "America/Sao_Paulo"
+config.active_record.table_name_prefix     = "dns"
+config.active_record.pluralize_table_names = false
+config.active_record.colorize_logging      = true
+config.active_record.default_timezone      = :local
+config.active_record.schema_format         = :sql
+config.action_controller.asset_host        = "Dns"
+

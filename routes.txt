@@ -1,0 +1,39 @@
+
+resources :photos
+=================
+
+	Verb	Path				action		used for
+	------  ------------------- ----------- -------------------------
+	GET		/photos				index		display a list of all photos
+	GET		/photos/:id			show		display a specific photo
+	GET		/photos/:id/edit	edit		return an HTML form for editing a photo
+	GET		/photos/new			new			return an HTML form for creating a new photo
+	POST	/photos				create		create a new photo
+	PUT		/photos/:id			update		update a specific photo
+	DELETE	/photos/:id			destroy		delete a specific photo
+
+
+	Helpers: Paths and URLs
+
+	photos_path     returns /photos
+	photo_path(id)  returns /photos/:id  (for instance, photo_path(10) returns /photos/10)
+	edit_photo_path returns /photos/edit
+	new_photo_path  returns /photos/new
+
+resource :geocoder
+==================
+
+	Verb	Path			action	used for
+    -----   --------------	------- -------------------
+	GET		/geocoder		show	display the one and only geocoder resource
+	GET		/geocoder/edit	edit	return an HTML form for editing the geocoder
+	GET		/geocoder/new	new		return an HTML form for creating the geocoder
+	POST	/geocoder		create	create the new geocoder
+	PUT		/geocoder		update	update the one and only geocoder resource
+	DELETE	/geocoder		destroy	delete the geocoder resource
+
+	Helpers:
+	geocoder_path 		returns /geocoder
+	edit_geocoder_path 	returns /geocoder/edit
+	new_geocoder_path 	returns /geocoder/new
+
