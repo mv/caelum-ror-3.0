@@ -1,9 +1,29 @@
 
+<h1>Restaurante: NewNewNew</h1>
 
-<form action="/restaurantes" method="post">
-  <p>Nome: <input type="text" name="restaurante[name]"></p>
-  <p>End : <input type="text" name="restaurante[endereco]"></p>
-  <p>Especialidade: <input type="text" name="restaurante[especialidade]"></p>
-  <input type="submit">
-</form>
+<% if @restaurante.errors.any? %>
+  <ul>
+    <% @restaurante.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for :restaurante, :url => {:action => 'create'} do |f| %>
+
+  <%= f.label      :name %>
+  <%= f.text_field :name %><br/>
+
+  <%= f.label      :endereco %>
+  <%= f.text_field :endereco %><br/>
+
+  <%= f.label      :especialidade %>
+  <%= f.text_field :especialidade %><br/>
+
+  <br/><br/>
+  <%= submit_tag "Enviar" %><br/><br/>
+
+<% end %>
+
+<%= link_to 'Back2Back', { :action => 'index' } %>
 

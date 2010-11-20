@@ -1,0 +1,24 @@
+
+<h1>Editando Restaurante</h1>
+
+<% if @restaurante.errors.any? %>
+  <ul>
+    <% @restaurante.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for :restaurante, :url => { :action => 'update', :id => @restaurante } do |f| %>
+  
+  Name: <%= f.text_field :name %><br/>
+  Endereco: <%= f.text_field :endereco %><br/>
+  Especialidade: <%= f.text_field :especialidade %><br/>
+
+  <br/><br/>
+  <%= submit_tag 'UpdateNow!' %><br/><br/>
+
+<% end %>
+
+<%= link_to 'Back?', { :action => 'index' } %>
+

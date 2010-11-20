@@ -1,6 +1,22 @@
 
+<h1>Restaurante: detalhes</h1>
 
-<h2> <%= @restaurante.name %> </h2>
+<p>
+  <b>Nome: </b>
+  <%= @restaurante.name %>
+</p>
 
-<%= @restaurante.name %>
+<p>
+  <b>Endereco: </b>
+  <%= @restaurante.endereco %>
+</p>
+
+<p>
+  <b>Especialidade: </b>
+  <%= @restaurante.especialidade %>
+</p>
+
+
+<%= link_to 'Edit', { :action => 'edit', :id => @restaurante } %>
+<%= link_to 'Back', { :action => 'index' } %>
 
