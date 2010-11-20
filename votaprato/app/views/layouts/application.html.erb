@@ -6,9 +6,18 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
+
+<h5>Controle de Restaurantes™</h5>
+
 <body>
 
-<%= yield %>
+  <p style="color: green"><%= flash[:notice] %></p>
+
+  <% flash.each do |key,msg| %>
+    <%= content_tag :p, msg, :class => "flash-#{key}"%>
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>

@@ -1,11 +1,14 @@
 
+<%# <%= render :partial => 'shared/nome_da_app' %> 
+
 <h1>Listagem de Restaurantes</h1>
 
-<table>
+<table cellspacing="0" >
   <tr>
     <th>Nome</th>
     <th>Endereco</th>
     <th>Especialidade</th>
+    <th colspan="3"> </th>
   </tr>
 
   <% @restaurantes.each do |rest| %>
