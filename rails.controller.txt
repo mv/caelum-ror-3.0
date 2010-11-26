@@ -35,7 +35,19 @@ $     rails generate controller hello_world
       invoke    test_unit
       create      test/unit/helpers/hello_world_helper_test.rb
 
-Exemplo 2
----------
+Usando
+------
     rails generate controller restaurantes
+
+    rails generate scaffold cliente nome:string idade:integer --migration=false -s
+    rails generate scaffold qualificacao cliente_id:integer restaurante_id:integer nota:float valor_gasto:float --migration=false -s
+
+Abas
+----
+
+    - abas sao feitas formatando CSS sob <ul>
+    - criar <class> para ter ativa e inativa
+    - usar helper: controller_name
+                   action_name
+
 
