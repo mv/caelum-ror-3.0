@@ -3,7 +3,7 @@ module ApplicationHelper
   def menu_principal
     menu = %w(cliente qualificacao restaurante)
 
-    menu_principal = "<ul>"
+    menu_principal = "<menu><ul>"
     menu.each do |item|
 
       menu_principal << "<li>" +
@@ -11,7 +11,7 @@ module ApplicationHelper
                         "</li>"
 
     end
-    menu_principal << "<ul>"
+    menu_principal << "</ul></menu>"
 
     raw menu_principal
 
